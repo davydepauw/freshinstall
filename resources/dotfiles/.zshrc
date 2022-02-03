@@ -26,9 +26,7 @@ antigen bundle brew-cask
 antigen bundle command-not-found
 antigen bundle node
 antigen bundle npm
-antigen bundle unixorn/rvm-plugin
 antigen bundle dotenv
-antigen bundle macunha1/zsh-terraform
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
