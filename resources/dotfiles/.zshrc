@@ -38,8 +38,9 @@ antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-se
 
 # Load the theme.
 # antigen theme robbyrussell
-antigen theme half-life
+# antigen theme half-life
 # antigen theme itchy
+antigen theme wesbos/Cobalt2-iterm
 
 # NVM
 export NVM_COMPLETION=true
@@ -75,25 +76,8 @@ bindkey -s "^[Oo" "/"
 bindkey -s "^[OX" "="
 
 # Aliases & Functions
-alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0" #wireless
-alias ipv4="ifconfig -a | grep -o 'inet \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet //'"
-alias ipv6="ifconfig -a | grep -o 'inet6 \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6 //'"
-alias afconfig="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
-alias showdesktop="defaults write com.apple.finder CreateDesktop true && killall Finder"
-alias hidedesktop="defaults write com.apple.finder CreateDesktop false && killall Finder"
-alias togglemic="osascript -e 'set storedInputLevel to input volume of (get volume settings)' -e 'if storedInputLevel > 0 then' -e 'set volume input volume 0' -e 'display notification \"🔇 Muted\" with title \"Microphone Status\"' -e 'else' -e 'set volume input volume 100' -e 'display notification \"🔈 Unmuted\" with title \"Microphone Status\"' -e 'end if'"
-alias flushdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-function zipallfolders() {
-    for i in */; do (cd "$i"; zip -r "../${i%/}.zip" .); done
-}
-function unzipall() {
-    find . -name '*.zip' -exec sh -c 'unzip -d "${1%.*}" "$1"' _ {} \;
-}
-function npmuo() {
-    if [ -f package.json ]; then
-        npm install $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)
-    fi
-}
+source ~/.aliases
+source ~/.functions
+
 
 # Automated Additions Below:

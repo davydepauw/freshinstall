@@ -96,7 +96,7 @@ else
 	echo -e "\033[93mInstalling\033[0m"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/bramus/.zprofile
+	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/davy.depauw/.zprofile
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 
 	brew update
