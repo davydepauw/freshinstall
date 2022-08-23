@@ -109,7 +109,6 @@ if [ "$AppleID" != "" ]; then
 	mas install 1043270657 # GIF Keyboard
 	mas install 494803304 # Wifi Explorer
 	mas install 803453959 # Slack
-	mas install 1006739057 # NepTunes (Last.fm Scrobbling)
 	mas install 411643860 # DaisyDisk
 
 fi;
